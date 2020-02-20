@@ -28,7 +28,8 @@ class MyHomePage extends StatelessWidget {
           linkColor: Colors.blue,
           textColor: Colors.black,
           fontWeight: FontWeight.w500,
-          isLinkNavigationEnable: true, //By Default it is true. If it is false, user would not navigate to the link on tapping
+          isLinkNavigationEnable:
+              true, //By Default it is true. If it is false, user would not navigate to the link on tapping
         ),
       ),
     );

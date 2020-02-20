@@ -1,7 +1,7 @@
 name: linkify_text
-description: LinkifyText is a Text widget that highlight all the link inside the text. It further navigate user to the link using browser on tapping on highlighted link.
-version: 0.0.2
-homepage: https://github.com/themaaz32/linkify-text
+description: LinkifyText is a Text widget that highlight all the links in the text. It further navigates user to the link using browser on tapping on highlighted link.
+version: 0.0.5
+homepage: https://github.com/themaaz32/linkify_text
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

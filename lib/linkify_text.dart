@@ -62,6 +62,7 @@ class LinkifyText extends StatefulWidget {
   final String fontFamily;
   final bool isLinkNavigationEnable;
   final FontWeight fontWeight;
+  final FontStyle fontStyle;
 
   LinkifyText(
     this.text, {
@@ -70,6 +71,7 @@ class LinkifyText extends StatefulWidget {
     this.textSize,
     this.fontFamily,
     this.fontWeight,
+    this.fontStyle,
     this.isLinkNavigationEnable = true,
   });
 
@@ -109,6 +111,7 @@ class _LinkifyTextState extends State<LinkifyText> {
                   fontFamily: widget.fontFamily,
                   fontWeight: widget.fontWeight ?? FontWeight.normal,
                   color: widget.linkColor ?? Colors.blue[700],
+                  fontStyle: widget.fontStyle ?? FontStyle.normal,
                   decoration: TextDecoration.underline),
               recognizer: new TapGestureRecognizer()
                 ..onTap = () {
@@ -121,6 +124,7 @@ class _LinkifyTextState extends State<LinkifyText> {
               style: TextStyle(
                   fontSize: widget.textSize ?? 15.0,
                   fontFamily: widget.fontFamily,
+                  fontStyle: widget.fontStyle ?? FontStyle.normal,
                   fontWeight: widget.fontWeight ?? FontWeight.normal,
                   color: widget.textColor ?? Colors.white),
             );
