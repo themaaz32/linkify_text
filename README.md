@@ -1,5 +1,6 @@
 # LinkifyText
- LinkifyText Widget allows to highlight links in Text. It further allow navigation, link opening on browser, on tapping highlighted link.
+
+LinkifyText Widget allows to highlight links in Text. It further allow navigation, link opening on browser, on tapping highlighted link.
 
 # Code Example
 
@@ -34,14 +35,14 @@ class MyHomePage extends StatelessWidget {
           //String literal that may contain link
           "Please visit google.com",
 
-          //normal text color other than linnk
+          //color for all non link text
           textColor: Colors.black,
 
-          //link color to highlight link
+          //color to highlight link
           linkColor: Colors.blue,
 
-          //text size
-          textSize: 20,
+          //font size
+          fontSize: 20,
 
           //font weight of the text
           fontWeight: FontWeight.w500,

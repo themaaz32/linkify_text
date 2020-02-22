@@ -1,6 +1,6 @@
 name: linkify_text
 description: LinkifyText is a Text widget that highlight all the links in the text. It further navigates user to the link using browser on tapping on highlighted link.
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/themaaz32/linkify_text
 
 environment:
@@ -21,7 +21,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
 # To add assets to your package, add an assets section, like this:
 # assets:
 #  - images/a_dot_burr.jpeg
