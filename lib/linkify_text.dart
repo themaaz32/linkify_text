@@ -57,7 +57,7 @@ class _Linkify {
 class LinkifyText extends StatefulWidget {
   final String text;
   final Color textColor;
-  final double textSize;
+  final double fontSize;
   final Color linkColor;
   final String fontFamily;
   final bool isLinkNavigationEnable;
@@ -68,7 +68,7 @@ class LinkifyText extends StatefulWidget {
     this.text, {
     this.textColor,
     this.linkColor,
-    this.textSize,
+    this.fontSize,
     this.fontFamily,
     this.fontWeight,
     this.fontStyle,
@@ -107,7 +107,7 @@ class _LinkifyTextState extends State<LinkifyText> {
           ? TextSpan(
               text: word.text,
               style: TextStyle(
-                  fontSize: widget.textSize,
+                  fontSize: widget.fontSize,
                   fontFamily: widget.fontFamily,
                   fontWeight: widget.fontWeight ?? FontWeight.normal,
                   color: widget.linkColor ?? Colors.blue[700],
@@ -122,7 +122,7 @@ class _LinkifyTextState extends State<LinkifyText> {
           : TextSpan(
               text: word.text,
               style: TextStyle(
-                  fontSize: widget.textSize ?? 15.0,
+                  fontSize: widget.fontSize ?? 15.0,
                   fontFamily: widget.fontFamily,
                   fontStyle: widget.fontStyle ?? FontStyle.normal,
                   fontWeight: widget.fontWeight ?? FontWeight.normal,

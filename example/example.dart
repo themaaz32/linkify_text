@@ -24,7 +24,7 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: LinkifyText(
           "please visit google.com",
-          textSize: 15.0,
+          fontSize: 15.0,
           linkColor: Colors.blue,
           textColor: Colors.black,
           fontWeight: FontWeight.w500,
