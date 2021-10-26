@@ -36,7 +36,7 @@ class MyHomePage extends StatelessWidget {
           "Please visit google.com",
 
           //color for all non link text
-          textColor: Colors.black,
+          fontColor: Colors.black,
 
           //color to highlight link
           linkColor: Colors.blue,

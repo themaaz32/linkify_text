@@ -11,7 +11,7 @@ class _Word {
   final String text;
   final bool isLink;
 
-  _Word({this.text, this.isLink = false});
+  _Word({required this.text, this.isLink = false});
 }
 
 class _Linkify {
@@ -55,18 +55,18 @@ class _Linkify {
 }
 
 class LinkifyText extends StatefulWidget {
-  final String text;
-  final Color textColor;
-  final double fontSize;
-  final Color linkColor;
-  final String fontFamily;
+  final String data;
+  final Color? fontColor;
+  final double? fontSize;
+  final Color? linkColor;
+  final String? fontFamily;
   final bool isLinkNavigationEnable;
-  final FontWeight fontWeight;
-  final FontStyle fontStyle;
+  final FontWeight? fontWeight;
+  final FontStyle? fontStyle;
 
   LinkifyText(
-    this.text, {
-    this.textColor,
+    this.data, {
+    this.fontColor,
     this.linkColor,
     this.fontSize,
     this.fontFamily,
@@ -80,7 +80,7 @@ class LinkifyText extends StatefulWidget {
 }
 
 class _LinkifyTextState extends State<LinkifyText> {
-  List<_Word> words;
+  late List<_Word> words;
 
   @override
   void initState() {
@@ -100,34 +100,39 @@ class _LinkifyTextState extends State<LinkifyText> {
 
   @override
   Widget build(BuildContext context) {
-    words = _Linkify.parseLink(widget.text);
-    return Text.rich(TextSpan(
+    words = _Linkify.parseLink(widget.data);
+    return Text.rich(
+      TextSpan(
         children: words.map((_Word word) {
-      return word.isLink
-          ? TextSpan(
-              text: word.text,
-              style: TextStyle(
-                  fontSize: widget.fontSize,
-                  fontFamily: widget.fontFamily,
-                  fontWeight: widget.fontWeight ?? FontWeight.normal,
-                  color: widget.linkColor ?? Colors.blue[700],
-                  fontStyle: widget.fontStyle ?? FontStyle.normal,
-                  decoration: TextDecoration.underline),
-              recognizer: new TapGestureRecognizer()
-                ..onTap = () {
-                  if (!widget.isLinkNavigationEnable) return;
-                  _launchURL(word.text);
-                },
-            )
-          : TextSpan(
-              text: word.text,
-              style: TextStyle(
-                  fontSize: widget.fontSize ?? 15.0,
-                  fontFamily: widget.fontFamily,
-                  fontStyle: widget.fontStyle ?? FontStyle.normal,
-                  fontWeight: widget.fontWeight ?? FontWeight.normal,
-                  color: widget.textColor ?? Colors.white),
-            );
-    }).toList()));
+          return word.isLink
+              ? TextSpan(
+                  text: word.text,
+                  style: TextStyle(
+                    fontSize: widget.fontSize,
+                    fontFamily: widget.fontFamily,
+                    fontWeight: widget.fontWeight ?? FontWeight.normal,
+                    color: widget.linkColor ?? Colors.blue[700],
+                    fontStyle: widget.fontStyle ?? FontStyle.normal,
+                    decoration: TextDecoration.underline,
+                  ),
+                  recognizer: new TapGestureRecognizer()
+                    ..onTap = () {
+                      if (!widget.isLinkNavigationEnable) return;
+                      _launchURL(word.text);
+                    },
+                )
+              : TextSpan(
+                  text: word.text,
+                  style: TextStyle(
+                    fontSize: widget.fontSize ?? 15.0,
+                    fontFamily: widget.fontFamily,
+                    fontStyle: widget.fontStyle ?? FontStyle.normal,
+                    fontWeight: widget.fontWeight ?? FontWeight.normal,
+                    color: widget.fontColor ?? Colors.white,
+                  ),
+                );
+        }).toList(),
+      ),
+    );
   }
 }

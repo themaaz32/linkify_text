@@ -26,7 +26,7 @@ class MyHomePage extends StatelessWidget {
           "please visit google.com",
           fontSize: 15.0,
           linkColor: Colors.blue,
-          textColor: Colors.black,
+          fontColor: Colors.black,
           fontWeight: FontWeight.w500,
           isLinkNavigationEnable:
               true, //By Default it is true. If it is false, user would not navigate to the link on tapping
